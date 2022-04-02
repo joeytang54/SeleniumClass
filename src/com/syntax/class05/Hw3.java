@@ -26,10 +26,10 @@ public class Hw3 {
         Select select=new Select(categoriesDD);
         List<WebElement> options=select.getOptions();
         //print categories
-        for(WebElement option:options){
-            String optionText=option.getText();
+        for(WebElement option:options) {
+            String optionText = option.getText();
             System.out.println(optionText);
-
+        }
         //Select computer.tablets
         select.selectByVisibleText("Computers/Tablets & Networking");
         WebElement search= driver.findElement(By.xpath("//input [@type='submit']"));
@@ -37,12 +37,12 @@ public class Hw3 {
 
         // header verifying
         WebElement header=driver.findElement(By.xpath("//span[@class='b-pageheader__text']"));
-        if(header.equals("Computers, Tablets & Network Hardware")){
-            System.out.println("Header verified");
+        if(header.isDisplayed()){
+            System.out.println("Header is displayed and verified");
         }else{
             System.out.println("Header not verified");
         }
-    }
+
     }
 }
 
